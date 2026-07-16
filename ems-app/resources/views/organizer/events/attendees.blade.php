@@ -29,6 +29,22 @@
                 </div>
             </div>
 
+            <!-- Search Form -->
+            <div class="mb-6 flex justify-end">
+                <form action="{{ route('organizer.events.attendees', $event->_id) }}" method="GET" class="flex gap-2 w-full md:w-1/3">
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama atau kode tiket..." 
+                           class="w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm">
+                    <button type="submit" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700">
+                        Cari
+                    </button>
+                    @if(request('search'))
+                        <a href="{{ route('organizer.events.attendees', $event->_id) }}" class="inline-flex items-center px-4 py-2 bg-slate-200 border border-transparent rounded-md font-semibold text-xs text-slate-700 uppercase tracking-widest hover:bg-slate-300">
+                            Reset
+                        </a>
+                    @endif
+                </form>
+            </div>
+
             <!-- Attendee Table -->
             <div class="bg-white shadow-sm border border-slate-200/80 rounded-lg overflow-hidden">
                 @if($registrations->count() > 0)

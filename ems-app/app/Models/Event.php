@@ -72,7 +72,7 @@ class Event extends Model
     /**
      * Scope: search by judul.
      */
-    public function scopeSearch($query, $search)
+    public function scopeCari($query, $search)
     {
         if ($search) {
             return $query->where('judul', 'like', '%' . $search . '%');

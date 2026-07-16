@@ -134,18 +134,28 @@ class EventController extends Controller
     /**
      * Show attendees for a specific event.
      */
-    public function attendees(string $id)
+    public function attendees(Request $request, string $id)
     {
         $event = Event::where('_id', $id)->where('user_id', Auth::user()->_id)->firstOrFail();
-        $registrations = Registration::where('event_id', $event->_id)
-            ->orderBy('created_at', 'desc')
-            ->get();
+        
+        $search = $request->get('search');
+        $query = Registration::where('event_id', $event->_id);
+
+        if ($search) {
+            $userIds = \App\Models\User::where('name', 'like', '%' . $search . '%')->pluck('id')->toArray();
+            $query->where(function($q) use ($search, $userIds) {
+                $q->where('registration_code', 'like', '%' . $search . '%')
+                  ->orWhereIn('user_id', $userIds);
+            });
+        }
+
+        $registrations = $query->orderBy('created_at', 'desc')->get();
 
         // Load user data for each registration
         foreach ($registrations as $reg) {
             $reg->participant = \App\Models\User::find($reg->user_id);
         }
 
-        return view('organizer.events.attendees', compact('event', 'registrations'));
+        return view('organizer.events.attendees', compact('event', 'registrations', 'search'));
     }
 }

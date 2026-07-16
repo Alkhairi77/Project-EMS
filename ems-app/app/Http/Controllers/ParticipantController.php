@@ -46,7 +46,7 @@ class ParticipantController extends Controller
         $kategori = $request->get('kategori');
 
         $events = Event::published()
-            ->search($search)
+            ->cari($search)
             ->kategori($kategori)
             ->orderBy('tanggal', 'asc')
             ->get();
