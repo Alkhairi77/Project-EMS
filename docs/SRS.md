@@ -14,44 +14,44 @@
 
 # **Table of Contents**
 
-* **1\. Pendahuluan**  
+* **1. Pendahuluan**  
   * 1.1 Tujuan Penulisan Dokumen  
   * 1.2 Audien yang Dituju  
   * 1.3 Batasan Produk  
   * 1.4 Definisi dan Istilah  
   * 1.5 Referensi  
-* **2\. Deskripsi Keseluruhan**  
+* **2. Deskripsi Keseluruhan**  
   * 2.1 Deskripsi Produk  
   * 2.2 Fungsi Produk  
   * 2.3 Penggolongan Karakteristik Pengguna  
   * 2.4 Lingkungan Operasi  
   * 2.5 Batasan Desain dan Implementasi  
   * 2.6 Dokumentasi Pengguna  
-* **3\. Kebutuhan Antarmuka Eksternal**  
+* **3. Kebutuhan Antarmuka Eksternal**  
   * 3.1 User Interfaces  
   * 3.2 Hardware Interface  
   * 3.3 Software Interface  
   * 3.4 Communication Interface  
-* **4\. Functional Requirement**  
+* **4. Functional Requirement**  
   * 4.1 Use Case Diagram  
   * 4.2 Skenario Alur Sistem (Use Case & Activity Diagram)  
-* **5\. Non Functional Requirements**  
-* **6\. Pemodelan Sistem dan Diagram**  
+* **5. Non Functional Requirements**  
+* **6. Pemodelan Sistem dan Diagram**  
   * 6.1 Class Diagram  
   * 6.2 Entity-Relationship Diagram (ERD)  
-* **7\. Spesifikasi Database (MongoDB Collections)**  
-* **8\. Pengujian & Penerimaan**  
+* **7. Spesifikasi Database (MongoDB Collections)**  
+* **8. Pengujian & Penerimaan**  
   * 8.1 Strategi Pengujian  
   * 8.2 Kriteria Penerimaan  
-* **9\. Pengembangan Masa Depan (Phase 2\)**
+* **9. Pengembangan Masa Depan (Phase 2)**
 
   # **Revision History**
 
 | Name | Date | Reason For Changes | Version |
 | :---- | :---- | :---- | :---- |
-| Initial Setup | 15/07/2026 | Dokumen dasar untuk MVP (Blade \+ MongoDB) | 1.0 |
+| Initial Setup | 15/07/2026 | Dokumen dasar untuk MVP (Blade + MongoDB) | 1.0 |
 
-  # **1\. Pendahuluan**
+  # **1. Pendahuluan**
 
   ## **1.1 Tujuan Penulisan Dokumen**
 
@@ -77,7 +77,7 @@ Sistem ini dibatasi pada pemenuhan skala **MVP (Minimum Viable Product)**. Aplik
 * Dokumen *Product Requirements Document (PRD)* EMS MVP v1.1.  
 * Dokumen *Software Architecture & Database Design* EMS MVP.
 
-  # **2\. Deskripsi Keseluruhan**
+  # **2. Deskripsi Keseluruhan**
 
   ## **2.1 Deskripsi Produk**
 
@@ -97,7 +97,7 @@ EMS MVP adalah platform website manajemen acara mandiri. Sistem ini memfasilitas
 
 | Kategori Pengguna | Tugas | Hak Akses ke Aplikasi | Kemampuan Minimum |
 | :---- | :---- | :---- | :---- |
-| **Organizer** | Mengelola event (CRUD), melihat daftar peserta, memvalidasi status kehadiran. | Akses penuh halaman /organizer/\*. | Mengoperasikan browser desktop/mobile & manajemen data web dasar. |
+| **Organizer** | Mengelola event (CRUD), melihat daftar peserta, memvalidasi status kehadiran. | Akses penuh halaman /organizer/*. | Mengoperasikan browser desktop/mobile & manajemen data web dasar. |
 | **Participant** | Mencari event, melihat detail, mendaftar event, melihat tiket digital pribadi. | Akses halaman /events & /dashboard. | Mengoperasikan browser mobile/desktop standar. |
 
 ## **2.4 Lingkungan Operasi**
@@ -114,7 +114,7 @@ Aplikasi berbasis web monolitik ini dapat dijalankan pada browser modern (Chrome
 
 Disediakan berkas Readme teknis operasional untuk instalasi proyek dan panduan antarmuka visual sederhana pada file design.md.
 
-# **3\. Kebutuhan Antarmuka Eksternal**
+# **3. Kebutuhan Antarmuka Eksternal**
 
 ## **3.1 User Interfaces**
 
@@ -127,16 +127,16 @@ Desain menggunakan utilitas Tailwind CSS bawaan Laravel Breeze dengan dominasi w
 
   ## **3.3 Software Interface**
 
-* PHP \>= 8.2  
+* PHP >= 8.2  
 * Composer untuk manajemen dependensi.  
 * MongoDB Driver & Ekstensi PHP MongoDB.  
-* Node.js & NPM untuk *compiling* asset Vite \+ Tailwind.
+* Node.js & NPM untuk *compiling* asset Vite + Tailwind.
 
   ## **3.4 Communication Interface**
 
 Komunikasi dilakukan via protokol HTTP/HTTPS standar yang memanfaatkan enkripsi SSL/TLS untuk pengiriman form data diri dan manajemen kuki sesi pengguna (*session cookies*).
 
-# **4\. Functional Requirement**
+# **4. Functional Requirement**
 
 Berikut adalah daftar kebutuhan fungsional sistem yang telah disederhanakan untuk kebutuhan MVP:
 
@@ -154,8 +154,6 @@ Berikut adalah daftar kebutuhan fungsional sistem yang telah disederhanakan untu
 | 10 | US3003 | Digital Web Ticket Display | Participant melihat daftar kode unik tiket langsung di web dashboard. |
 
 ### **4.1 Use Case Diagram**
-
-Cuplikan kode
 
 flowchart LR
 
@@ -181,23 +179,23 @@ flowchart LR
 
     end
 
-    Participant \--\> UC1
+    Participant --> UC1
 
-    Participant \--\> UC2
+    Participant --> UC2
 
-    Participant \--\> UC3
+    Participant --> UC3
 
-    Participant \--\> UC4
+    Participant --> UC4
 
-    Organizer \--\> UC1
+    Organizer --> UC1
 
-    Organizer \--\> UC2
+    Organizer --> UC2
 
-    Organizer \--\> UC5
+    Organizer --> UC5
 
-    Organizer \--\> UC6
+    Organizer --> UC6
 
-    Organizer \--\> UC7
+    Organizer --> UC7
 
 ## **4.2 Skenario Alur Sistem (Use Case & Activity Diagram)**
 
@@ -208,23 +206,23 @@ flowchart LR
 
 | Action by User | Response from System |
 | :---- | :---- |
-| 1\. Membuka halaman registrasi website. | Menampilkan form registrasi Breeze lengkap dengan pilihan dropdown Role. |
-| 2\. Mengisi Nama, Email, Sandi, dan memilih Role. | Melakukan validasi format data input server-side. |
-| 3\. Mengeklik tombol "Register". | Membuat dokumen baru di koleksi users, mengaktifkan sesi login, dan mengarahkan pengguna ke dashboard sesuai role pilihan. |
+| 1. Membuka halaman registrasi website. | Menampilkan form registrasi Breeze lengkap dengan pilihan dropdown Role. |
+| 2. Mengisi Nama, Email, Sandi, dan memilih Role. | Melakukan validasi format data input server-side. |
+| 3. Mengeklik tombol "Register". | Membuat dokumen baru di koleksi users, mengaktifkan sesi login, dan mengarahkan pengguna ke dashboard sesuai role pilihan. |
 
 *   
   **Activity Diagram**:  
   Cuplikan kode  
   stateDiagram-v2  
-      \[\*\] \--\> BukaHalamanDaftar  
-      BukaHalamanDaftar \--\> IsiFormDataDiri  
-      IsiFormDataDiri \--\> PilihRoleUser  
-      PilihRoleUser \--\> KlikSubmitDaftar  
-      KlikSubmitDaftar \--\> ValidasiSistem  
-      ValidasiSistem \--\> SimpanMongoDB: Data Valid  
-      ValidasiSistem \--\> IsiFormDataDiri: Data Tidak Valid  
-      SimpanMongoDB \--\> RedirectDashboardRole  
-      RedirectDashboardRole \--\> \[\*\]
+      [*] --> BukaHalamanDaftar  
+      BukaHalamanDaftar --> IsiFormDataDiri  
+      IsiFormDataDiri --> PilihRoleUser  
+      PilihRoleUser --> KlikSubmitDaftar  
+      KlikSubmitDaftar --> ValidasiSistem  
+      ValidasiSistem --> SimpanMongoDB: Data Valid  
+      ValidasiSistem --> IsiFormDataDiri: Data Tidak Valid  
+      SimpanMongoDB --> RedirectDashboardRole  
+      RedirectDashboardRole --> [*]
 
 
   ### **4.2.2 Kasus 2: Organizer Membuat Event**
@@ -234,21 +232,21 @@ flowchart LR
 
 | Action by User | Response from System |
 | :---- | :---- |
-| 1\. Mengeklik tombol "Create Event" di Dashboard Organizer. | Menyajikan halaman formulir input data event lengkap sesuai spesifikasi PRD. |
-| 2\. Mengisi judul, deskripsi, lokasi, kuota, tanggal, kategori, dan mengunggah gambar banner. | Menangkap request form data. |
-| 3\. Mengeklik tombol "Save Event". | Menyimpan berkas banner ke *local storage*, membuat dokumen baru di koleksi events, dan menampilkan pesan sukses di halaman manajemen utama. |
+| 1. Mengeklik tombol "Create Event" di Dashboard Organizer. | Menyajikan halaman formulir input data event lengkap sesuai spesifikasi PRD. |
+| 2. Mengisi judul, deskripsi, lokasi, kuota, tanggal, kategori, dan mengunggah gambar banner. | Menangkap request form data. |
+| 3. Mengeklik tombol "Save Event". | Menyimpan berkas banner ke *local storage*, membuat dokumen baru di koleksi events, dan menampilkan pesan sukses di halaman manajemen utama. |
 
 *   
   **Activity Diagram**:  
   Cuplikan kode  
   stateDiagram-v2  
-      \[\*\] \--\> MasukMenuEvent  
-      MasukMenuEvent \--\> IsiFormDetailAcara  
-      IsiFormDetailAcara \--\> UnggahGambarBanner  
-      UnggahGambarBanner \--\> KlikSimpan  
-      KlikSimpan \--\> SimpanKeStorageDanDB  
-      SimpanKeStorageDanDB \--\> TampilkanTabelEventOrganizer  
-      TampilkanTabelEventOrganizer \--\> \[\*\]
+      [*] --> MasukMenuEvent  
+      MasukMenuEvent --> IsiFormDetailAcara  
+      IsiFormDetailAcara --> UnggahGambarBanner  
+      UnggahGambarBanner --> KlikSimpan  
+      KlikSimpan --> SimpanKeStorageDanDB  
+      SimpanKeStorageDanDB --> TampilkanTabelEventOrganizer  
+      TampilkanTabelEventOrganizer --> [*]
 
 
   ### **4.2.3 Kasus 3: Participant Memesan Tiket (One-Click Booking)**
@@ -258,23 +256,23 @@ flowchart LR
 
 | Action by User | Response from System |
 | :---- | :---- |
-| 1\. Membuka detail halaman event yang diinginkan. | Menampilkan rincian event dan status sisa kuota terkini. |
-| 2\. Mengeklik tombol "Daftar Sekarang". | Memulai pengecekan ketersediaan alokasi kuota secara atomik di server. |
-|  | **Sistem (Kondisi A \- Cukup)**: Mengurangi kapasitas event, melahirkan dokumen baru di koleksi registrations dengan registration\_code unik, lalu mengalihkan ke dashboard tiket. |
-|  | **Sistem (Kondisi B \- Penuh)**: Membatalkan proses dan memicu pesan error: *"Kuota Sudah Penuh\!"*. |
+| 1. Membuka detail halaman event yang diinginkan. | Menampilkan rincian event dan status sisa kuota terkini. |
+| 2. Mengeklik tombol "Daftar Sekarang". | Memulai pengecekan ketersediaan alokasi kuota secara atomik di server. |
+|  | **Sistem (Kondisi A - Cukup)**: Mengurangi kapasitas event, melahirkan dokumen baru di koleksi registrations dengan registration_code unik, lalu mengalihkan ke dashboard tiket. |
+|  | **Sistem (Kondisi B - Penuh)**: Membatalkan proses dan memicu pesan error: *"Kuota Sudah Penuh!"*. |
 
 *   
   **Activity Diagram**:  
   Cuplikan kode  
   stateDiagram-v2  
-      \[\*\] \--\> BukaDetailAcara  
-      BukaDetailAcara \--\> KlikDaftarSekarang  
-      KlikDaftarSekarang \--\> HitungSisaKuotaDB  
-      HitungSisaKuotaDB \--\> GenerateTiketSukses: Kuota Tersedia  
-      HitungSisaKuotaDB \--\> TampilkanPesanGagal: Kuota Habis  
-      GenerateTiketSukses \--\> RedirectDashboardTiket  
-      TampilkanPesanGagal \--\> BukaDetailAcara  
-      RedirectDashboardTiket \--\> \[\*\]
+      [*] --> BukaDetailAcara  
+      BukaDetailAcara --> KlikDaftarSekarang  
+      KlikDaftarSekarang --> HitungSisaKuotaDB  
+      HitungSisaKuotaDB --> GenerateTiketSukses: Kuota Tersedia  
+      HitungSisaKuotaDB --> TampilkanPesanGagal: Kuota Habis  
+      GenerateTiketSukses --> RedirectDashboardTiket  
+      TampilkanPesanGagal --> BukaDetailAcara  
+      RedirectDashboardTiket --> [*]
 
 
   ### **4.2.4 Kasus 4: Peserta Check-In Manual**
@@ -284,23 +282,23 @@ flowchart LR
 
 | Action by User | Response from System |
 | :---- | :---- |
-| 1\. Organizer membuka sub-menu "Lihat Peserta" pada baris event tertentu. | Memuat tabel nama-nama peserta terdaftar beserta status kehadiran saat ini. |
-| 2\. Organizer mencari nama/kode peserta yang datang lalu klik tombol "Set Hadir (Check In)". | Menerima request ID registrasi target. |
-| 3\. Sistem merubah status database. | Memperbarui kolom status dari Registered menjadi Checked In di MongoDB secara instan dan memuat ulang tabel halaman dengan indikator sukses hijau. |
+| 1. Organizer membuka sub-menu "Lihat Peserta" pada baris event tertentu. | Memuat tabel nama-nama peserta terdaftar beserta status kehadiran saat ini. |
+| 2. Organizer mencari nama/kode peserta yang datang lalu klik tombol "Set Hadir (Check In)". | Menerima request ID registrasi target. |
+| 3. Sistem merubah status database. | Memperbarui kolom status dari Registered menjadi Checked In di MongoDB secara instan dan memuat ulang tabel halaman dengan indikator sukses hijau. |
 
 *   
   **Activity Diagram**:  
   Cuplikan kode  
   stateDiagram-v2  
-      \[\*\] \--\> BukaDaftarPesertaEvent  
-      BukaDaftarPesertaEvent \--\> CariNamaAtauKodeTiket  
-      CariNamaAtauKodeTiket \--\> KlikTombolSetHadir  
-      KlikTombolSetHadir \--\> UpdateStatusMongoDB  
-      UpdateStatusMongoDB \--\> RefreshTampilanBadgeHijau  
-      RefreshTampilanBadgeHijau \--\> \[\*\]
+      [*] --> BukaDaftarPesertaEvent  
+      BukaDaftarPesertaEvent --> CariNamaAtauKodeTiket  
+      CariNamaAtauKodeTiket --> KlikTombolSetHadir  
+      KlikTombolSetHadir --> UpdateStatusMongoDB  
+      UpdateStatusMongoDB --> RefreshTampilanBadgeHijau  
+      RefreshTampilanBadgeHijau --> [*]
 
 
-  # **5\. Non Functional Requirements**
+  # **5. Non Functional Requirements**
 
 | ID | Parameter | Kebutuhan Eksklusif MVP |
 | :---- | :---- | :---- |
@@ -310,7 +308,7 @@ flowchart LR
 | SU-4 | **Security** | Seluruh celah form diproteksi dari serangan CSRF secara bawaan oleh *Web Guard Middleware* Laravel, serta enkripsi password akun memakai algoritma Bcrypt kuat. |
 | SU-5 | **Concurrency Safe** | Sistem wajib mencegah *overbooking* kuota tiket memakai perhitungan kalkulasi terisolasi pada aras kontrol database. |
 
-  # **6\. Pemodelan Sistem dan Diagram**
+  # **6. Pemodelan Sistem dan Diagram**
 
   ## **6.1 Class Diagram**
 
@@ -320,66 +318,66 @@ flowchart LR
 
       class User {
 
-          \+ObjectId id
+          +ObjectId id
 
-          \+String name
+          +String name
 
-          \+String email
+          +String email
 
-          \+String password
+          +String password
 
-          \+String role
+          +String role
 
       }
 
       class Event {
 
-          \+ObjectId id
+          +ObjectId id
 
-          \+ObjectId user\_id
+          +ObjectId user_id
 
-          \+String judul
+          +String judul
 
-          \+String deskripsi
+          +String deskripsi
 
-          \+String banner
+          +String banner
 
-          \+String lokasi
+          +String lokasi
 
-          \+Integer kapasitas
+          +Integer kapasitas
 
-          \+Integer harga
+          +Integer harga
 
-          \+String tanggal
+          +String tanggal
 
-          \+String jam
+          +String jam
 
-          \+String kategori
+          +String kategori
 
-          \+String status
+          +String status
 
       }
 
       class Registration {
 
-          \+ObjectId id
+          +ObjectId id
 
-          \+ObjectId event\_id
+          +ObjectId event_id
 
-          \+ObjectId user\_id
+          +ObjectId user_id
 
-          \+String registration\_code
+          +String registration_code
 
-          \+String status
+          +String status
 
       }
 
 
-      User "1" \-- "\*" Event : "Membuat (Organizer)"
+      User "1" -- "*" Event : "Membuat (Organizer)"
 
-      Event "1" \-- "\*" Registration : "Memiliki Pendaftar"
+      Event "1" -- "*" Registration : "Memiliki Pendaftar"
 
-      User "1" \-- "\*" Registration : "Mengklaim Tiket (Participant)"
+      User "1" -- "*" Registration : "Mengklaim Tiket (Participant)"
 
 
   ## **6.2 Entity-Relationship Diagram (ERD)**
@@ -397,7 +395,7 @@ flowchart LR
 
       USERS {
 
-          object\_id id PK
+          object_id id PK
 
           string name
 
@@ -411,9 +409,9 @@ flowchart LR
 
       EVENTS {
 
-          object\_id id PK
+          object_id id PK
 
-          object\_id user\_id FK
+          object_id user_id FK
 
           string judul
 
@@ -439,39 +437,39 @@ flowchart LR
 
       REGISTRATIONS {
 
-          object\_id id PK
+          object_id id PK
 
-          object\_id event\_id FK
+          object_id event_id FK
 
-          object\_id user\_id FK
+          object_id user_id FK
 
-          string registration\_code
+          string registration_code
 
           string status
 
       }
 
 
-  # **7\. Spesifikasi Database (MongoDB Collections)**
+  # **7. Spesifikasi Database (MongoDB Collections)**
 
 Sistem NoSQL diimplementasikan ke dalam 3 koleksi terstruktur dengan penempatan indeks pencarian cepat:
 
-### **1\. Koleksi: users**
+### **1. Koleksi: users**
 
 * **Indeks**: email (Unique Hash Index).  
-* **Tipe Data**: \_id (ObjectId), name (String), email (String), password (String Hashed), role (String: organizer/participant).
+* **Tipe Data**: _id (ObjectId), name (String), email (String), password (String Hashed), role (String: organizer/participant).
 
-  ### **2\. Koleksi: events**
+  ### **2. Koleksi: events**
 
-* **Indeks**: user\_id (Foreign Key index), kategori (Search filter index).  
-* **Tipe Data**: \_id (ObjectId), user\_id (ObjectId), judul (String), deskripsi (String), banner (String Path), lokasi (String), kapasitas (Int), harga (Int), tanggal (String), jam (String), kategori (String), status (String).
+* **Indeks**: user_id (Foreign Key index), kategori (Search filter index).  
+* **Tipe Data**: _id (ObjectId), user_id (ObjectId), judul (String), deskripsi (String), banner (String Path), lokasi (String), kapasitas (Int), harga (Int), tanggal (String), jam (String), kategori (String), status (String).
 
-  ### **3\. Koleksi: registrations**
+  ### **3. Koleksi: registrations**
 
-* **Indeks**: event\_id (Index), registration\_code (Unique Index).  
-* **Tipe Data**: \_id (ObjectId), event\_id (ObjectId), user\_id (ObjectId), registration\_code (String Unique), status (String: Registered/Checked In).
+* **Indeks**: event_id (Index), registration_code (Unique Index).  
+* **Tipe Data**: _id (ObjectId), event_id (ObjectId), user_id (ObjectId), registration_code (String Unique), status (String: Registered/Checked In).
 
-  # **8\. Pengujian & Penerimaan**
+  # **8. Pengujian & Penerimaan**
 
   ## **8.1 Strategi Pengujian (Testing Strategy)**
 
@@ -480,10 +478,10 @@ Sistem NoSQL diimplementasikan ke dalam 3 koleksi terstruktur dengan penempatan 
 
   ## **8.2 Kriteria Penerimaan (Acceptance Criteria)**
 
-1. **Akses Role Terisolasi**: Akun bertipe *Participant* mutlak diblokir dan tidak bisa membuka rute url administrasi /organizer/\* (dialihkan otomatis lewat Laravel Middleware).  
+1. **Akses Role Terisolasi**: Akun bertipe *Participant* mutlak diblokir dan tidak bisa membuka rute url administrasi /organizer/* (dialihkan otomatis lewat Laravel Middleware).  
 2. **Siklus Check-In Akurat**: Ketika tombol klik "Set Hadir" ditekan oleh panitia, label status berubah menjadi hijau (Checked In) secara instan dan data tersimpan permanen di database.
 
-   # **9\. Pengembangan Masa Depan (Phase 2\)**
+   # **9. Pengembangan Masa Depan (Phase 2)**
 
 Setelah fondasi MVP ini selesai dan stabil, ruang ekspansi berikutnya mencakup:
 
